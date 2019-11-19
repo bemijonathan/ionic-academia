@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-mcq',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class McqComponent implements OnInit {
 
-  constructor() { }
+  constructor(private Nav: NavController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
+  goBack(){
+    console.log('gone back')
+    this.Nav.pop()
+  }
 }

@@ -1,13 +1,13 @@
-<ion-tab-bar>
-  <ion-tab-button [routerLink]="['']" routerLinkActive="router-link-active" >
-    <ion-icon name="home" primary>
-
-    </ion-icon>
-  </ion-tab-button>
-  <ion-tab-button [routerLink]="['score']" routerLinkActive="router-link-active"> 
-   TEST
-  </ion-tab-button>
-  <ion-tab-button> 
-    SCORES
-  </ion-tab-button>
-</ion-tab-bar>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button [routerLink]="['/']" [routerLinkActiveOptions]="{exact:true}"  routerLinkActive="active_path" path="exact">
+      <ion-icon name="home" primary></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/login']" routerLinkActive="active_path">
+      <ion-icon name="book"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/path']" routerLinkActive="active_path"> 
+      <ion-icon name="time" tab=""></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

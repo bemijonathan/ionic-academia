@@ -1,11 +1,42 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">test</ion-title>
+    <ion-buttons padding>
+      <ion-icon
+        name="menu"
+        class="ion-text-left increase_font"
+        font-size="40"
+      ></ion-icon>
+      <ion-title class="ion-text-center"> PINNACLE </ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<ion-content [scrollEvents]="true">
+  <ion-card class="banner-png">
+    <p>welcome {{ name | uppercase }} your on a {{ days }} days streak</p>
+    <div class="ion-text-center">
+      <ion-button class="random_button" color="secondary">
+        Random Test
+      </ion-button>
+    </div>
+  </ion-card>
 
-<ion-content class="ion-padding">
-  <ion-button (click)="Login()">
-    Click Me
-  </ion-button>
+  <div class="flex-box">
+    <ion-card class="bch" color="secondary" (click)="nextPage('BCH')">
+      <p>BCH</p>
+    </ion-card>
+    <ion-card class="anatomy" color="danger" (click)="nextPage('ANA')">
+      <p>ANATOMY</p>
+    </ion-card>
+  </div>
+  <div class="flex-box">
+    <ion-card color="primary" color="dark" (click)="nextPage('PHY')">
+      <p>PHY</p>
+    </ion-card>
+
+
+    <ion-card (click)="nextPage('ALT')">
+      <p>ALT. TO <br>
+        PRACTICALS</p>
+    </ion-card>
+  </div>
 </ion-content>

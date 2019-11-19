@@ -1,0 +1,23 @@
+// .gradient{
+//     background-image: linear-gradient(#E6CA14,#FBDA00);
+// }
+
+ion-content{
+    --background:none;
+    background-image: linear-gradient(#F51D50,#FBDA00);
+}
+
+.increase_font{
+    font-size: 25px;
+}
+
+.flex_col{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex_col clock{
+    position: relative;
+    max-width: 70px;
+    width: 100%;
+}

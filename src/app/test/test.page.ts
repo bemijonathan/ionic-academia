@@ -8,10 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./test.page.scss'],
 })
 export class TestPage implements OnInit {
-
-  constructor(private nav :NavController, private route : Router) { }
+  name: string = "jonathan";
+  days: number = 5;
+  constructor(public nav :NavController, private route : Router) { }
 
   ngOnInit() {
+  }
+  nextPage(course: string){
+    this.nav.navigateForward(`course/${course}`)
+    // this.route.navigate(['course', course])
   }
   Login(){
     this.route.navigate(['login'])

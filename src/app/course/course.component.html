@@ -1,3 +1,25 @@
-<p>
-  course works!
-</p>
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons class="ion-padding">
+        <ion-icon name="arrow-back" class="bigger-back-icon" (click)="goback()">
+        </ion-icon>
+        <ion-title class="ion-text-center"> {{course}} </ion-title>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding" [scrollEvents]="true">
+    <ion-title class="ion-padding">
+      Select Year
+    </ion-title>
+    <ion-list >
+      <ion-item *ngFor="let year of years" no-padding> 
+        <ion-label class="ion-padding" (click)="selectYear(year)"> {{year}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="random()" expand="block"> 
+        Take Random Questions <ion-icon name="arrow-forward">
+        </ion-icon>
+    </ion-button>
+  </ion-content>
+  
