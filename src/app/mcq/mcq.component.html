@@ -10,12 +10,28 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-<ion-content class="ion-padding" class="gradient">
+<ion-content class="ion-padding" class="gradient" [scrollEvents]="true">
   <section class="ion-padding flex_col">
-      <h1>
-        ANATOMY 1995
-      </h1>
+      <div>
+        <h1>
+          {{course | uppercase}} {{year}}
+        </h1>
+        <h3>
+            TIME LEFT: 3:00hrs
+        </h3>
+      </div>
       <clock>
       </clock>
+  </section>
+  <section  *ngFor="let question of questions" class="ion-padding" [ngClass]="{'hidden': ++question.id != counter}">
+    <ion-list *ngIf="++question.id === counter">
+      <h1>
+        <span>{{question.id}}</span> <span> {{question.question}} </span>
+      </h1>
+        <ion-item *ngFor="let option of question.options"class="options" (click)="checkAnswer()">
+          {{ option }}
+        </ion-item>
+        <ion-button color="dark" expand="block" [ngClass]="{'hidden': showButton}" (click)="nextQuestion()"> next </ion-button>
+    </ion-list>
   </section>
 </ion-content>

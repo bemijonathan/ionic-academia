@@ -17,6 +17,7 @@ import { YearComponent } from './year/year.component';
 import { CourseComponent } from './course/course.component';
 import { TestPage } from './test/test.page';
 import { ClockComponent } from './clock/clock.component';
+import { ResultPage } from './results-page/resuls-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ClockComponent } from './clock/clock.component';
     DashboardComponent,
     CourseComponent,
     TestPage,
-    ClockComponent
+    ClockComponent,
+    ResultPage
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule],

@@ -7,6 +7,7 @@ import { ScoreComponent } from './score/score.component';
 import { YearComponent } from './year/year.component';
 import { CourseComponent } from './course/course.component';
 import { TestPage } from './test/test.page';
+import { ResultPage } from './results-page/resuls-page.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'score', component: ScoreComponent },
   { path: 'year', component: YearComponent },
   { path: 'course/:course', component: CourseComponent },
-  { path: "**", component:ScoreComponent }
+  { path: 'result', component:ResultPage},
+  { path: "**", component:LoginComponent }
 ];
 
 @NgModule({

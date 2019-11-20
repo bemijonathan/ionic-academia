@@ -21,3 +21,15 @@ ion-content{
     max-width: 70px;
     width: 100%;
 }
+
+.options{
+    cursor: pointer;
+    margin-bottom:15px;
+}
+
+ion-list{
+    background: none;
+}
+.hidden {
+    display: none;
+}

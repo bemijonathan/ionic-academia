@@ -38,7 +38,7 @@ export class CourseComponent implements OnInit {
     }
   }
   goback() {
-    this.Nav.back();
+    this.Nav.navigateBack('');
   }
   selectYear(year){
     console.log(this.shortCourse)
