@@ -1,156 +1,59 @@
-import { Component, OnInit } from "@angular/core";
-import { NavController } from "@ionic/angular";
-import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
+import { QuestionsService } from '../questions.service';
 
 @Component({
-  selector: "app-mcq",
-  templateUrl: "./mcq.component.html",
-  styleUrls: ["./mcq.component.scss"]
+  selector: 'app-mcq',
+  templateUrl: './mcq.component.html',
+  styleUrls: ['./mcq.component.scss']
 })
 export class McqComponent implements OnInit {
-  constructor(private Nav: NavController, public route: ActivatedRoute) {}
+  constructor(private Nav: NavController, public route: ActivatedRoute, public quest:QuestionsService) {}
 
   course: string;
   showButton = true;
   year: string;
   counter: number;
 
-  questions = [
-    {
-      question:
-        "which of the following is not a feature of the superior border of the scapular",
-      options: [
-        "supra-scapular notch",
-        "coracoid process",
-        "presence of spine of the scapula",
-        "attachment of the trapezius muscle"
-      ],
-      answer: 1,
-      id: 1
-    },
-    {
-      question:
-        "which of the following is not a feature of the superior border of the scapular",
-      options: [
-        "supra-scapular notch",
-        "coracoid process",
-        "presence of spine of the scapula",
-        "attachment of the trapezius muscle"
-      ],
-      answer: 1,
-      id: 2
-    },
-    {
-      question:
-        "which of the following is not a feature of the superior border of the scapular",
-      options: [
-        "supra-scapular notch",
-        "coracoid process",
-        "presence of spine of the scapula",
-        "attachment of the trapezius muscle"
-      ],
-      answer: 2,
-      id: 3
-    },
-    {
-      question:
-        "which of the following is not a feature of the superior border of the scapular",
-      options: [
-        "supra-scapular notch",
-        "coracoid process",
-        "presence of spine of the scapula",
-        "attachment of the trapezius muscle"
-      ],
-      answer: 0,
-      id: 4
-    },
-    {
-      question:
-        "which of the following is not a feature of the superior border of the scapular",
-      options: [
-        "supra-scapular notch",
-        "coracoid process",
-        "presence of spine of the scapula",
-        "attachment of the trapezius muscle"
-      ],
-      answer: 2,
-      id: 5
-    },
-    {
-      question:
-        "which of the following is not a feature of the superior border of the scapular",
-      options: [
-        "supra-scapular notch",
-        "coracoid process",
-        "presence of spine of the scapula",
-        "attachment of the trapezius muscle"
-      ],
-      answer: 3,
-      id: 6
-    },
-    {
-      question:
-        "which of the following is not a feature of the superior border of the scapular",
-      options: [
-        "supra-scapular notch",
-        "coracoid process",
-        "presence of spine of the scapula",
-        "attachment of the trapezius muscle"
-      ],
-      answer: 0,
-      id: 7
-    },
-    {
-      question:
-        "which of the following is not a feature of the superior border of the scapular",
-      options: [
-        "supra-scapular notch",
-        "coracoid process",
-        "presence of spine of the scapula",
-        "attachment of the trapezius muscle"
-      ],
-      answer: 1,
-      id: 8
-    },
-    {
-      question:
-        "which of the following is not a feature of the superior border of the scapular",
-      options: [
-        "supra-scapular notch",
-        "coracoid process",
-        "presence of spine of the scapula",
-        "attachment of the trapezius muscle"
-      ],
-      answer: 2,
-      id: 9
-    }
-  ];
+  questions: any[] = [];
 
   ngOnInit() {
+    this.quest._get().subscribe(data => {
+      this.questions = data;
+      console.log(this.questions);
+    })
     this.course = this.route.snapshot.params.course;
     this.year = this.route.snapshot.params.year;
     this.counter = 1;
+    console.log(this.counter)
     console.log(this.course, this.year);
+    this.quest.questions = this.questions ;
   }
 
   goBack() {
-    console.log("gone back");
+    console.log('gone back');
     this.Nav.navigateBack(`course/${this.course}`);
   }
 
   getQuestions() {}
 
   checkAnswer() {
-    this.showButton = false;
-    console.log(this.counter);
+    if (!this.showButton) {
+      console.log('should not click again ');
+    } else {
+      this.showButton = false;
+      console.log('clicked answer');
+    }
   }
+  
   nextQuestion(id) {
     if (this.counter === this.questions.length) {
-     this.Nav.navigateForward('score')
-    }else{
+     this.Nav.navigateForward('score');
+    } else {
       this.showButton = true;
       this.counter++;
-      console.log(this.counter)
+      console.log(this.counter);
     }
   }
 }

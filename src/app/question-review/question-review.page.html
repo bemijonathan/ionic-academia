@@ -1,0 +1,37 @@
+<ion-header>
+        <ion-toolbar>
+          <ion-buttons padding>
+            <ion-icon
+              (click)="goBack()"
+              name="arrow-back"
+              class="ion-text-left increase_font"
+            ></ion-icon>
+            <ion-title class="ion-text-center"> PINNACLE </ion-title>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+    <ion-content class="ion-padding" class="gradient" [scrollEvents]="true">
+      <section class="ion-padding flex_col">
+          <div>
+            <h1>
+              {{ course | uppercase}} {{year}}
+            </h1>
+            <h3>
+                TIME LEFT: 3:00hrs
+            </h3>
+          </div>
+          <div>
+              failed
+          </div>
+      </section>
+      <section  class="ion-padding">
+        <ion-list>
+          <h1>
+            <span>{{questions[1].id}}</span> <span> {{questions[1].question}} </span>
+          </h1>
+            <ion-item *ngFor="let option of questions[1].options" class="options" (click)="checkAnswer()">
+              {{ option }}
+            </ion-item>
+        </ion-list>
+      </section>
+    </ion-content>

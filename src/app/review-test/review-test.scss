@@ -1,0 +1,19 @@
+.flex-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap:10px;
+    // margin:-10;
+    div{
+        height:50px;
+        font-size:14px;
+        text-align:center;
+        padding: 10px;
+        width:100%;
+    }   
+    .red {
+        background: red;
+    } 
+    .blue{
+        background:green;
+    }
+}

@@ -1,12 +1,28 @@
-<ion-header>
+<!-- <ion-header>
     <ion-toolbar>
       <ion-title class="ion-text-center">LOGIN</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
   
-  <ion-content class="ion-padding">
-    <ion-button (click)="goback()">
-        Click Me
-    </ion-button>
-  </ion-content>
-  
+ <ion-content class="ion-padding login-screen">
+    <section>
+      <div class="flex_holder">
+        <div class="flex">
+          <span class="bordered"> Login </span> <span [routerLink]="['/signup']"> Sign Up</span>
+        </div>
+        <form #login="ngForm" (submit)="goback(login)">
+          <div>
+            <input type="text" name="username" required ngModel/>
+          </div>
+          <div>
+            <input type="password" name="password" required ngModel/>
+          </div>
+          <ion-button expand="block" type="submit">
+            Submit
+          </ion-button>
+        </form>
+        <!-- {{login | json}} -->
+      </div>
+      
+    </section>
+  </ion-content> 

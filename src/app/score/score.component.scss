@@ -1,0 +1,36 @@
+.result{
+    --background:none;
+    background:#2BCCC7;
+    .circle{
+        background: white;
+        height:134px;
+        width:134px;
+        border-radius:100%;
+        margin:auto;
+        border:12px solid #1C7722; 
+        margin-top: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    p{
+        font-weight: bold;
+        text-align: center;
+        font-size: 25px;
+        margin: 10px 0;
+    }.top-button{
+            margin-top:20%;
+        }
+    div{
+        ion-button{
+            width:190px;
+            font-size: 24px;
+            height: 50px;
+            border-radius:12px;
+        }
+        
+    }
+}

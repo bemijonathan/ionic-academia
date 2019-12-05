@@ -23,15 +23,19 @@
       <clock>
       </clock>
   </section>
-  <section  *ngFor="let question of questions" class="ion-padding" [ngClass]="{'hidden': ++question.id != counter}">
-    <ion-list *ngIf="++question.id === counter">
-      <h1>
-        <span>{{question.id}}</span> <span> {{question.question}} </span>
-      </h1>
-        <ion-item *ngFor="let option of question.options"class="options" (click)="checkAnswer()">
-          {{ option }}
-        </ion-item>
-        <ion-button color="dark" expand="block" [ngClass]="{'hidden': showButton}" (click)="nextQuestion()"> next </ion-button>
-    </ion-list>
+  <section *ngIf="questions.length > 1 ">
+    <section  *ngFor="let question of questions" class="ion-padding" [ngClass]="{'hidden': ++question.q_num != counter}">
+      <ion-list *ngIf="++question.q_num === counter">
+        <h1>
+          <span>{{question.q_num}}</span> 
+          <span> {{question.question}} </span>
+        </h1>
+          <ion-item *ngFor="let option of question.option" class="options" (click)="checkAnswer()">
+            {{ option.body  }}
+          </ion-item>
+          <ion-button  *ngIf="counter < questions.length " color="dark" expand="block" [ngClass]="{'hidden': showButton}" (click)="nextQuestion()"> next </ion-button>
+          <ion-button color="dark" expand="block" [ngClass]="{'hidden': counter !== questions.length}" (click)="nextQuestion()" routerLinkActive="router-link-active" > Submit </ion-button>
+      </ion-list>
+    </section>
   </section>
 </ion-content>

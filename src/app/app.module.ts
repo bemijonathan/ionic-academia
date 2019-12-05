@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
-
+// import { Http} from'@angular/core/'
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -18,6 +18,12 @@ import { CourseComponent } from './course/course.component';
 import { TestPage } from './test/test.page';
 import { ClockComponent } from './clock/clock.component';
 import { ResultPage } from './results-page/resuls-page.component';
+import { ReviewTest } from './review-test/review-test.component';
+import { QuestionReview } from './question-review/question-review.page';
+import { HttpClientModule } from '@angular/common/http';
+import { SignInComponent } from './signIn/sign-in.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -31,10 +37,13 @@ import { ResultPage } from './results-page/resuls-page.component';
     CourseComponent,
     TestPage,
     ClockComponent,
-    ResultPage
+    ResultPage,
+    ReviewTest,
+    QuestionReview,
+    SignInComponent
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule, HttpClientModule, FormsModule],
   providers: [
     StatusBar,
     SplashScreen,
