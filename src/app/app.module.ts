@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.page';
 import { McqComponent } from './mcq/mcq.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ScoreComponent } from './score/score.component';
-import { YearComponent } from './year/year.component';
+import { YearComponent } from './subs/year.component';
 import { CourseComponent } from './course/course.component';
 import { TestPage } from './test/test.page';
 import { ClockComponent } from './clock/clock.component';

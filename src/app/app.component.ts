@@ -18,6 +18,12 @@ export class AppComponent {
     this.initializeApp();
   }
 
+  sideMenu = [
+    {name:"profile", link:'profile'},
+    {name:"subscription", link:"subscripton"},
+    {name:"LogOut", link: "LogOut"}
+  ]
+
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();

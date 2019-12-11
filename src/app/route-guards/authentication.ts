@@ -9,9 +9,8 @@ export class authenticationComponent implements CanActivate {
     async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
         try {
-            let username: any = await localStorage.getItem('username');
-            username = JSON.parse(username);
-            if (username.username.length > 1) {
+            let username: any = await localStorage.getItem('logindetails')
+            if (username.length > 1) {
                 this.nav.navigateForward('home');
                 return false;
             } else {

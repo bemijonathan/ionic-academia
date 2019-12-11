@@ -1,5 +1,29 @@
-<!-- #5065EA -->
-
-<ion-content class="ion-paddding">
-    
-</ion-content>
+<!-- </ion-header> -->
+  
+<ion-content class="ion-padding login-screen">
+   <section>
+     <div class="flex_holder">
+       <div class="flex">
+         <span class="bordered" [routerLink]="['/login']"> Login </span> <span> Sign Up</span>
+       </div>
+       <form #details="ngForm" (submit)="goback(details)">
+         <div>
+           <input type="text" placeholder="username" name="username" required ngModel/>
+         </div>
+         <div>
+            <input type="email" placeholder="email" name="email" required ngModel/>
+          </div>
+          <div>
+            <input type="tel" name="phone" placeholder="Phone" required ngModel/>
+          </div>
+         <div>
+           <input type="password" name="password" placeholder="password" required ngModel/>
+         </div>
+         <ion-button expand="block" type="submit">
+           Submit
+         </ion-button>
+       </form>
+     </div>
+     
+   </section>
+ </ion-content> 
